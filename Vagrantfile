@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 
   config.vbguest.auto_update = false
 
-  config.vm.box = "rbenv-ruby1.9.3_v4"
+  config.vm.box = "rbenv-ruby1.9.3"
   config.vm.synced_folder ".", "/vagrant", :nfs => true
   config.vm.box_url = "http://codepen-dropbox.s3.amazonaws.com/rbenv-ruby1.9.3.box"
 
@@ -17,8 +17,8 @@ Vagrant.configure("2") do |config|
     chef.cookbooks_path = "cookbooks"
     chef.roles_path = "roles"
     chef.data_bags_path = "data_bags"
-    #chef.add_role "production"
-    chef.add_recipe "hello_service"
+    chef.add_role "production"
+    #chef.add_recipe "hello_service"
   end
 
   config.vm.provider :virtualbox do |vb|

@@ -11,7 +11,7 @@ include_recipe "nodejs::install_from_binary"
 
 package "git-core"
 
-git "/vagrant/source/hello_service" do
+git node.hello_service.root_path do
   repository node.hello_service.repo_url
 end
 
