@@ -17,7 +17,7 @@ end
 
 service "hello_service" do
   provider Chef::Provider::Service::Upstart
-  restart_command "stop hello_service && start hello_service"
+  #restart_command "stop hello_service && start hello_service"
 end
 
 template "/etc/init/hello_service.conf" do
