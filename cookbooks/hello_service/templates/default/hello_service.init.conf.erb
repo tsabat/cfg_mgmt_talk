@@ -3,7 +3,10 @@
 
 respawn
 
-start on startup
+start on (local-filesystems 
+  and net-device-up IFACE!=lo
+  and mounted MOUNTPOINT=/vagrant)
+
 stop on shutdown
 
 setuid vagrant

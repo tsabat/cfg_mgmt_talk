@@ -17,7 +17,6 @@ end
 
 service "hello_service" do
   provider Chef::Provider::Service::Upstart
-  supports :status => false, :restart => true, :reload => false
   restart_command "stop hello_service && start hello_service"
 end
 
@@ -28,3 +27,4 @@ template "/etc/init/hello_service.conf" do
   mode "0655"
   notifies :restart, resources(:service => "hello_service")
 end
+
