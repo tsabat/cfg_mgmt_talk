@@ -17,8 +17,8 @@ Vagrant.configure("2") do |config|
     chef.cookbooks_path = "cookbooks"
     chef.roles_path = "roles"
     chef.data_bags_path = "data_bags"
-    chef.add_role "production"
-    #chef.add_recipe "hello_service"
+    #chef.add_role "production"
+    chef.add_recipe "hello_service"
   end
 
   config.vm.provider :virtualbox do |vb|

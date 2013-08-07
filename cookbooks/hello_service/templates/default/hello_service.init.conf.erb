@@ -3,7 +3,7 @@
 
 respawn
 
-start on (local-filesystems 
+start on (local-filesystems
   and net-device-up IFACE!=lo
   and mounted MOUNTPOINT=/vagrant)
 
@@ -14,5 +14,5 @@ setgid vagrant
 
 script
   cd /vagrant/source/hello_service
-  node app <%= node.hello_service.port_number %>
+  node server <%= node.hello_service.port_number %>
 end script
