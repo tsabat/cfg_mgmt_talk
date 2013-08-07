@@ -1,0 +1,15 @@
+#!upstart
+#description "hello_service startup"
+
+respawn
+
+start on startup
+stop on shutdown
+
+setuid vagrant
+setgid vagrant
+
+script
+  cd /vagrant/source/hello_service
+  node app <%= node.hello_service.port_number %>
+end script
